@@ -2,7 +2,9 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Job
+from .models import Job, Category
 
-# add job app to admin panel
+# add apps to admin panel
 admin.site.register(Job)
+admin.site.register(Category)
+

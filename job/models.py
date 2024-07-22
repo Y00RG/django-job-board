@@ -22,6 +22,7 @@ class Job(models.Model): # Table
   vacancy = models.IntegerField(default=1)  # Number of open positions, default is 1
   salary = models.IntegerField(default=0)  # Annual salary in USD, 0 means 'not specified'
   experience = models.IntegerField(default=1)  # Required years of experience
+  category = models.ForeignKey('Category', on_delete=models.CASCADE)
 
 
   # Return the column name of the current
@@ -30,4 +31,12 @@ class Job(models.Model): # Table
     # return the job title 
     return self.title
   
+
+class Category(models.Model):
+  name = models.CharField(max_length=25)
+
+  def __str__(self) -> str:
+    # return the Category name
+    return self.name
+
 
